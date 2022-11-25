@@ -1,6 +1,6 @@
-import express from 'express';
-import dotenv from 'dotenv';
-import actorRouter from './routes/actorRouter.js';
+import express from "express";
+import dotenv from "dotenv";
+import actorRouter from "./routes/actorRouter.js";
 
 dotenv.config();
 
@@ -8,11 +8,10 @@ const app = express();
 
 app.use(express.json());
 
-app.use('/actor', actorRouter);
+app.use("/actor", actorRouter);
 
-const port = 3030
-
+const port = 3030;
 
 app.listen(port, () => {
-    console.log(`Example app listening on port ${port}`)
-})
+  console.log(`Example application listening on port ${port}`);
+});
