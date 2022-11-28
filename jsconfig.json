@@ -1,15 +1,15 @@
-{
-    "compilerOptions": {
-        "baseUrl": "./",
-        "paths": {
-            "/app/*": [
-                "*"
-            ]
-        },
-        "module": "es2022",
-        "target": "ES2021"
-    },
-    "exclude": [
-        "node_modules"
-    ]
-}
+// {
+//     "compilerOptions": {
+//         "baseUrl": "./",
+//         "paths": {
+//             "/app/*": [
+//                 "*"
+//             ]
+//         },
+//         "module": "es2022",
+//         "target": "ES2021"
+//     },
+//     "exclude": [
+//         "node_modules"
+//     ]
+// }

@@ -1,6 +1,9 @@
 import express from 'express';
-import { getActorById, getActors, insertActor, updateActor, deleteActor } from '../db/actor.js';
+import { getActorById, getActors, insertActor, updateActor, deleteActor } from '../db/actor';
 import { param, body, validationResult } from 'express-validator';
+import { Actor } from '../db/actor'
+
+
 
 const router = express.Router();
 
@@ -20,7 +23,7 @@ router.get(
             return res.status(400).json({ errors: errors.array() });
         }
 
-        const actor = await getActorById(req.params.actorId)
+        const actor = await getActorById(req.params?.actorId)
         if (!actor) {
             res.status(404).send();
         } else {
@@ -63,7 +66,7 @@ router.put(
         }
 
         const actor = req.body;
-        const updatedActor = await updateActor(req.params.actorId, actor);
+        const updatedActor = await updateActor(req.params?.actorId, actor);
 
         if (!updatedActor) {
             res.status(500).send();
@@ -83,12 +86,12 @@ router.delete(
             return res.status(400).json({ errors: errors.array() });
         }
 
-        const actor = getActorById(req.params.actorId);
+        const actor = getActorById(req.params?.actorId);
 
         if (!actor) {
             res.status(404).send();
         } else {
-            deleteActor(req.params.actorId);
+            deleteActor(req.params?.actorId);
             res.status(202).send();
         }
     }
